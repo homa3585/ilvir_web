@@ -1,0 +1,123 @@
+body {
+    width: 1600px;
+    height: 100%;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+body article div.people {
+    width: 800px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+body article div.people span {
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -42px;
+}
+body article div.people input {
+    width: 250px;
+    height: 30px;
+    margin-top: 8px;
+    margin-left: 10px;
+    outline: none;
+}
+body article div.poisk {
+    background-color: orange;
+    width: 310px;
+    height: 50px;
+    border-radius: 3%;
+}
+body article div.people button {
+    width: 35px;
+    height: 36px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: -4.5px;
+    background-color: white;
+    border: 1px solid grey;
+    background-color: orange;
+}
+body article div.people button a img {
+    width: 20px;
+    margin-left: -3px;
+}
+body article div.menu2 p  {
+    margin-top: 20px;
+    width: 400px;
+    height: 30px;
+    margin-left: 40px;
+}
+body article div.menu2 p span.text {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+body article div.menu2 p span.text a {
+    text-decoration: none;
+    color: black;
+}
+body article div.menu2 p span.text a:hover {
+    color: orangered;
+}
+body article div.content {
+    border-top: 10px solid rgb(223, 221, 221);
+}
+body article div.content div.div {
+    margin-top: 0px;
+    width: 850px;
+    margin-left: 25px;
+    color: white;
+    font-size: 0px;
+}
+body article div.content div.div img.ikonka {
+    width: 85px;
+    height: 85px;
+    border-radius: 100px;
+    border: 1px solid grey;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+body article div.content div.div form {
+    margin-left: 120px;
+    margin-top: -97px;
+    width: 700px;
+}
+body article div.content div.div form p a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+body article div.content div.div form p {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: grey;
+}
+body article div.content div.hide {
+    display: none;
+}
+@media screen and (max-width: 1400px) and (min-width: 401px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        width: 400px;
+    }
+    body article {
+        left: 0px;
+    }
+}

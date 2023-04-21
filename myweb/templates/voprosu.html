@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Gashev Ilya">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='voprosu.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+        <title>Ответы</title>
+    </head>
+    <style>
+body div.header {
+    background-color: white;
+    width: 900px;
+    height: 75px;
+    position: relative;
+    background-color: rgb(247, 177, 48);
+}
+body article div.logo img {
+    position: absolute;
+    margin: auto;
+    width: 80px;
+    height: 70px;
+}
+body article div.menu {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+body article div.menu ul li {
+    display: inline-block;
+    background-color: rgb(247, 177, 48);
+    padding: 2%;
+    margin-left: -1.5%;
+}
+body article div.menu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+}
+body article div.menu ul li a:hover {
+    color: white;
+}
+body article div.menu ul {
+    margin-top: 0.5%;
+    margin-left: -8%;
+}
+    </style>
+<body>
+    <article>
+        <div class="header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='/images/логотип.png') }}">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/users/account/{{ email2 }}7c86d344da51ec25059798a5df4ccd1c/646399f452ee73777d9009139400dc29">Вопросы</a></li>
+                    <li><a href="/account/otzuvu/9bc65c2abec141778ffaa729489f3e87{{ email2 }}">Отзывы</a></li>
+                    <li><a href="/users/new_user/account/{{ email2 }}/d3100a9a7427877c47a68c7b1d7b7a0a">Пользователи</a></li>
+                    <li><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email2 }}/2ff4f516c506107be5c429ed35084347a">Аккаунт</a></li>
+                </ul>
+            </div>
+        </div>
+            {% for i in data %}
+            <div class="vopros">
+                <p class="vopros-user"><span>Вопрос от <b>{{ i.surname }} {{ i.name }}</b></span></p>
+                {% for date in i.vopros %}
+                {% if code == date[0] %}
+                <form>
+                    <p style="width: 85px; height: 95px; margin-top: 15px; margin-left: 15px;"><a href="/users/account-people/ksfjnfewnefsdfha{{ email }}127fe69deaf4e0277cf84a02e0aaec4f{{ email2 }}"><img src="{{ url_for('userava', name=i.email) }}" class="ikonka"></a></p>
+                    <p class="text"><b><span style="font-size: 20px;">{{ date[2] }}</span></b></p>
+                    <p class="text2" style="border-bottom: 1px dashed grey;"><span>{{ date[4] }}</span></p>
+                    {% if date[0] not in popular_vopros or date[0] in popular_vopros and popular_vopros[date[0]] == 0 and date[5] == email2 %}
+                    <p style="margin-top: 20px; margin-left: 450px; width: 380px; color: blue; font-size: 16px;"><span style="margin-left: 10px;"><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email2 }}/2ff4f516c5061{{ date[0] }}7be5c429ed35084347a" style="font-size: 17px; color: rgb(128, 0, 128); text-decoration: none;">Редактировать</a></span> <span style="font-size: 17px; color: black; margin-left: 10px;">Написал</span> {{ date[1] }}</p>
+                    {% else %}
+                    <p style="margin-top: 20px; margin-left: 500px; width: 250px; color: blue; font-size: 16px;"><span style="font-size: 17px; color: black;">Написал</span> {{ date[1] }}</p>
+                    {% endif %}
+                </form>
+                <p class="user"><span>Ответы на вопрос</span> </p>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% for j in i.otvet %}
+            {% if j[0] == code %}
+            <div class="content">
+                <a href="/users/account-people/ksfjnfewnefsdfha{{ j[5] }}127fe69deaf4e0277cf84a02e0aaec4f{{ email2 }}"><img src="{{ url_for('userava', name=j[5]) }}" class="ikonka"></a>
+                <form>
+                    <p><b>{{ j[3] }} {{ j[4] }}</b></p>
+                    <p style="border-bottom: 1px dashed grey;"><span>{{ j[2] }}</span></p>
+                    {% if j[5] == email2 and code2 != "dbfsx" %}
+                    <p style="margin-top: 10px; margin-left: 280px; width: 390px; color: blue; font-size: 16px;"><span style="margin-left: 10px;"><a href="/users/account/{{ email }}646399f452ee7377dbfsx7d9009139400dc29{{ code }}/{{ email2 }}" style="font-size: 17px; color: rgb(128, 0, 128); text-decoration: none;">Редактировать</a></span> <span style="font-size: 17px; color: black; margin-left: 10px;">Написал</span> {{ j[1] }}</p>
+                    {% else %}
+                    <p style="margin-top: 10px; margin-left: 400px; width: 250px; color: blue; font-size: 16px;"><span style="font-size: 17px; color: black;">Написал</span> {{ j[1] }}</p>
+                    {% endif %}
+                </form>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+            <div class="content2">
+                {% if email2 != "mf4sk7l" %}
+                {% if code2 != "dbfsx" %}
+                <form method="post">
+                    <p style="margin-bottom: 10px;">Написать ответ</p>
+                    {% for data, msg in get_flashed_messages(True) %}
+                    <p class="{{ data }}" style="font-size: 16px; color: red; margin-bottom: 10px;">{{ msg }}</p>
+                    {% endfor %}
+                    <p>Краткий: </p>
+                    <p><input type="text" placeholder="Напишите ответ кратко" name="kratko" style="width: 600px; height: 30px; outline: none; border: 1px solid grey;"></p>
+                    <p>Подробный: </p>
+                    <p><textarea placeholder="Написать ответ подробно" name="otvet"></textarea></p>
+                    <p><button>Опубликовать ответ</button></p>
+                </form>
+                {% else %}
+                <form method="post">
+                    <p style="margin-bottom: 10px;">Редактировать ответ</p>
+                    {% for data, msg in get_flashed_messages(True) %}
+                    <p class="{{ data }}" style="font-size: 16px; color: red; margin-bottom: 10px;">{{ msg }}</p>
+                    {% endfor %}
+                    <p>Краткий: </p>
+                    <p><input type="text" placeholder="Напишите ответ кратко" name="kratko" style="width: 600px; height: 30px; outline: none; border: 1px solid grey;"></p>
+                    <p>Подробный: </p>
+                    <p><textarea placeholder="Написать ответ подробно" name="otvet"></textarea></p>
+                    <p><button style="background-color: blue; border: 1px solid blue;">Исправить ответ</button></p>
+                </form>
+                {% endif %}
+                <p class="vopros-user2"><span>Другие вопросы</span></p>
+                {% else %}
+                <p style="margin-left: 30px; font-size: 18px;">Вы не зарегистрировались, либо не вошли в свой аккаунт. Поэтому вам не доступны функции ответа на вопрос.
+                <a href="/">Ссылка на вход</a>,   <a href="/registration/new_account/login/password/ea6faefb616432504e904827011f0eb5">Ссылка на регистрацию</a></p>
+                {% endif %}
+            </div>
+            <div class="content3">
+                <form>
+                    {% if spisock != [] %}
+                    {% for s in range(len_spisock) %}
+                    <p><a href="/users/account/{{ spisock[s][3] }}646399f452ee737717d9009139400dc29{{ spisock[s][4] }}/{{ email2 }}" style="margin-left: 0px;"><b>{{ spisock[s][1] }}</b></a></p>
+                    <p style="font-size: 16px; color: grey; margin-left: 30px; margin-top: -10px;">{{ spisock[s][2] }}</p>
+                    {% if spisock[s][3] == email2 and spisock[s][4] not in popular_vopros %}
+                    <p class="text"><span style="margin-left: 0px;">Написал {{ spisock[s][0] }}</span> <span style="margin-left: 10px;"><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email2 }}/2ff4f516c5061{{ spisock[s][4] }}7be5c429ed35084347a" style="font-size: 17px; color: rgb(128, 0, 128);">Редактировать</a></span></p>
+                    {% else %}
+                    <p class="text"><span style="margin-left: 0px;">Написал {{ spisock[s][0] }}</span></p>
+                    {% endif %}
+                    {% endfor %}
+                    {% else %}
+                    <p><span style="font-size: 17px; margin-left: 100px;">Вопросы не найдены</span></p>
+                    {% endif %}
+                </form>
+            </div>
+    </article>
+</body>
+</html>

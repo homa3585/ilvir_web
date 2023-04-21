@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Gashev Ilya">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='vopros.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+        <title>Неотвеченные</title>
+    </head>
+    <style>
+body div.header {
+    background-color: white;
+    width: 900px;
+    height: 75px;
+    position: relative;
+    background-color: rgb(247, 177, 48);
+}
+body article div.logo img {
+    position: absolute;
+    margin: auto;
+    width: 80px;
+    height: 70px;
+}
+body article div.menu {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+body article div.menu ul li {
+    display: inline-block;
+    background-color: rgb(247, 177, 48);
+    padding: 2%;
+    margin-left: -1.5%;
+}
+body article div.menu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+}
+body article div.menu ul li a:hover {
+    color: white;
+}
+body article div.menu ul {
+    margin-top: 0.5%;
+    margin-left: -8%;
+}
+    </style>
+<body>
+    <article>
+        <div class="header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='/images/логотип.png') }}">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/users/account/{{ email }}7c86d344da51ec25059798a5df4ccd1c/646399f452ee73777d9009139400dc29">Вопросы</a></li>
+                    <li><a href="/account/otzuvu/9bc65c2abec141778ffaa729489f3e87{{ email }}">Отзывы</a></li>
+                    <li><a href="/users/new_user/account/{{ email }}/d3100a9a7427877c47a68c7b1d7b7a0a">Пользователи</a></li>
+                    <li><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email }}/2ff4f516c506107be5c429ed35084347a">Аккаунт</a></li>
+                </ul>
+            </div>
+        </div>
+            <div class="people">
+                <div class="poisk">
+                    <input type="text" placeholder="Поиск" id="input">
+                   <button><a href="#"><img src="{{ url_for('static', filename='/images/поиск.png') }}"></a></button>
+                </div>
+                <span>Неотвеченные</span>
+            </div>
+            <div class="menu2">
+                <p><span class="text"><a href="/users/account/aa9eaa9a0e4729a8baa716aeebdfb703/{{ email }}7c86d344da51ec25059798a5df4ccd1c" style="color: orangered;">Неотвеченные</a></span> <span class="text"><a href="/users/account/737436e4037cb88e125151c14c65cca6/{{ email }}7c86d344da51ec25059798a5df4ccd1c">Популярные</a></span></p>
+            </div>
+            {% for i in data %}
+            {% for date in i.vopros %}
+            {% if date[0] not in spisock_otvet %}
+            <div class="content">
+                <div class="div">
+                    <a href="/users/account-people/ksfjnfewnefsdfha{{ date[5] }}127fe69deaf4e0277cf84a02e0aaec4f{{ email }}"><img class="ikonka" src="{{ url_for('userava', name=date[5]) }}"></a>
+                    {{ date[2] }}
+                    <form>
+                        <p class="list"><a href="/users/account/{{ i.email }}646399f452ee737717d9009139400dc29{{ date[0] }}/{{ email }}"><b>{{ date[2] }}</b></a></p>
+                        <p style="margin-top: -10px;"><span style="word-wrap: break-word;">{{ date[3] }}</span></p>
+                        {% if date[5] == email %}
+                        <p style="border-top: 1px solid grey; margin-top: 35px;"><span style="color: black; font-size: 17px;">Ответов: </span><span style="color: black;">0</span>
+                            <span style="color: black; font-size: 17px; margin-left: 10px;">Написал:</span> <span style="color: blue;">{{ date[1] }}</span><span style="margin-left: 10px;"><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email }}/2ff4f516c5061{{ date[0] }}7be5c429ed35084347a" style="font-size: 17px; color: rgb(128, 0, 128);">Редактировать</a></span></p>
+                        {% else %}
+                         <p style="border-top: 1px solid grey; margin-top: 35px;"><span style="color: black; font-size: 17px;">Ответов: </span><span style="color: black;">0</span>
+                            <span style="color: black; font-size: 17px; margin-left: 10px;">Написал:</span> <span style="color: blue;">{{ date[1] }}</span></p>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        <script>
+            document.querySelector("#input").oninput = function() {
+                let value = this.value.toLowerCase().trim();
+                let list = document.querySelectorAll("div.content div.div");
+                if (value != "") {
+                    list.forEach(elem => {
+                        if(elem.innerText.toLowerCase().search(value) == -1) {
+                            elem.classList.add("hide");
+                        }
+                    });
+                } else {
+                    list.forEach(elem => {
+                        elem.classList.remove("hide");
+                    })
+                }
+            };
+        </script>
+    </article>
+</body>
+</html>

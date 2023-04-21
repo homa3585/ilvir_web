@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Farukhov Ilvir">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='account_people.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+        <title>Пользователь</title>
+    </head>
+    <style>
+body div.header {
+    background-color: white;
+    width: 100%;
+    height: 9%;
+    position: relative;
+    background-color: rgb(247, 177, 48);
+}
+body article div.logo img {
+    position: absolute;
+    margin: auto;
+    width: 80px;
+    height: 70px;
+}
+body article div.menu {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+body article div.menu ul li {
+    display: inline-block;
+    background-color: rgb(247, 177, 48);
+    padding: 2%;
+    margin-left: -1.5%;
+}
+body article div.menu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+}
+body article div.menu ul li a:hover {
+    color: white;
+}
+body article div.menu ul {
+    margin-top: 0.5%;
+    margin-left: -8%;
+}
+    </style>
+<body>
+    <article>
+        <div class="header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='/images/логотип.png') }}">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/users/account/{{ email }}7c86d344da51ec25059798a5df4ccd1c/646399f452ee73777d9009139400dc29">Вопросы</a></li>
+                    <li><a href="/account/otzuvu/9bc65c2abec141778ffaa729489f3e87{{ email }}">Отзывы</a></li>
+                    <li><a href="/users/new_user/account/{{ email }}/d3100a9a7427877c47a68c7b1d7b7a0a">Пользователи</a></li>
+                    <li><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email }}/2ff4f516c506107be5c429ed35084347a">Аккаунт</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="admin">
+            {% for i in data %}
+            <img src="{{ url_for('userava', name=i.email) }}">
+        </div>
+        <div class="content">
+            <form>
+                <p>Фамилия: <span>{{ i.surname }}</span></p>
+                <p>Имя: <span>{{ i.name }}</span></p>
+                {% if i.birthday2 == "да" %}
+                <p style="color: red; font-size: 18px;">У {{ name }} день рождение!!!</p>
+                {% endif %}
+                {% if date == i.timer %}
+                <p>Пользователь <span style="color: green;">в сети</span></p>
+                {% else %}
+                <p>Пользователь был <span style="color: blue;">{{ i.timer }}</span></p>
+                {% endif %}
+                <p>Местоположение: <span>{{ i.live }}</span></p>
+                <p>Возраст: <span>{{ i.age }}</span></p>
+                <p>О себе: <span style="font-size: 16px;">{{ i.about_me }}</span></p>
+            </form>
+        </div>
+        <div class="content2">
+            <span>Активность пользователя</span>
+            <form>
+                <p>Очков: <span style="color: blue; margin-left: 7px;">{{ i.glasses }}</span></p>
+                <p>Вопросов: <span style="color: blue; margin-left: 7px;">{{ i.questions}}</span></p>
+                <p>Ответов: <span style="color: blue; margin-left: 7px;">{{ i.answers }}</span></p>
+                {% endfor %}
+            </form>
+        </div>
+    </article>
+</body>
+</html>

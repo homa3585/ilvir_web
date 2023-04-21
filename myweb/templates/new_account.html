@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Gashev Ilya">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+        <title>Аккаунт</title>
+    </head>
+    <style>
+body div.header {
+    background-color: white;
+    width: 100%;
+    height: 7%;
+    position: relative;
+    background-color: rgb(247, 177, 48);
+}
+body article div.logo img {
+    position: absolute;
+    margin: auto;
+    width: 80px;
+    height: 70px;
+}
+body article div.menu {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+body article div.menu ul li {
+    display: inline-block;
+    background-color: rgb(247, 177, 48);
+    padding: 2%;
+    margin-left: -1.5%;
+}
+body article div.menu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align: center;
+}
+body article div.menu ul li a:hover {
+    color: white;
+}
+body article div.menu ul {
+    margin-top: 0.5%;
+    margin-left: -8%;
+}
+body {
+    height: 850px;
+    width: 1600px;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 1070px;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+label {
+    display: none;
+    width: 170px;
+    height: 170px;
+    margin-left: 350px;
+    background: silver;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 5px;
+}
+body article form p {
+    margin-top: 10px;
+    margin-left: 100px;
+    font-size: 18px;
+}
+body article form input.name {
+    width: 694px;
+    height: 30px;
+    outline: none;
+}
+body article form input.data {
+    width: 300px;
+    height: 30px;
+    outline: none;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+body article form textarea {
+    resize: none;
+    width: 694px;
+    height: 224px;
+    outline: none;
+}
+body article form button {
+    width: 150px;
+    height: 30px;
+    background-color: orange;
+    color: white;
+    border: 1px solid orange;
+    border-radius: 5%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body p.error {
+    font-size: 17px;
+    color: red;
+}
+@media screen and (max-width: 1400px) and (min-width: 501px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 500px) {
+    body {
+        width: 400px;
+    }
+    body article {
+        left: 0px;
+    }
+    body article form input.name{border: 1px solid grey;}
+    body article form input.data{border: 1px solid grey;}
+    body article form textarea{border: 1px solid grey;}
+}
+    </style>
+<body>
+    <article>
+        <div class="header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='/images/логотип.png') }}">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/users/account/{{ email }}7c86d344da51ec25059798a5df4ccd1c/646399f452ee73777d9009139400dc29">Вопросы</a></li>
+                    <li><a href="/account/otzuvu/9bc65c2abec141778ffaa729489f3e87{{ email }}">Отзывы</a></li>
+                    <li><a href="/users/new_user/account/{{ email }}/d3100a9a7427877c47a68c7b1d7b7a0a">Пользователи</a></li>
+                    <li><a href="/account/a4a65cd1e8c0033fabc8ea5ec80070b6{{ email }}/2ff4f516c506107be5c429ed35084347a">Аккаунт</a></li>
+                </ul>
+            </div>
+        </div>
+    <div class="new_admin">
+        <form method="post" enctype="multipart/form-data">
+            <label for="pct"></label>
+            <p>Загрузить файл для икоки: <input type="file" id="pct" name="file"></p>
+            <p>Фамилия: </p>
+            {% for i in data %}
+            <p><input type="text" placeholder="Фамилия" class="name" value="{{ i.surname }}" readonly></p>
+            <p>Имя: </p>
+            <p><input type="text" placeholder="Имя" class="name" value="{{ i.name }}" readonly></p>
+            <p>Введите свое местоположение: </p>
+            <p><input type="text" placeholder="Например: Россия, Республика Татарстан, Казань" class="name" name="live" maxlength="60" value="{{ i.live }}"></p>
+            <p>Дата рождения: <input type="date" class="data" name="data"></p>
+            <p>О себе: </p>
+            <p><textarea placeholder="Введите текст о себе" name="about_me" style="font-size: 18px;" maxlength="530">{{ i.about_me }}</textarea></p>
+            {% endfor %}
+            <p><button>Изменить</button></p>
+        </form>
+    </div>
+        <script>
+        document.getElementById("pct").addEventListener("change", function () {
+              if (this.files[0]){
+              var fr = new FileReader();
+              fr.addEventListener("load", function () {
+              document.querySelector("label").style.backgroundImage = "url(" + fr.result + ")";
+              }, false);
+              document.querySelector("label").style.display = "inline-block";
+              fr.readAsDataURL(this.files[0]);
+        }});
+        </script>
+    </article>
+</body>
+</html>

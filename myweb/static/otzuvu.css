@@ -1,0 +1,114 @@
+body {
+    height: 100%;
+    width: 1600px;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+body article div.otzuv {
+    width: 800px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+body article div.otzuv span {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -40px;
+}
+body article div.otzuv form {
+    width: 600px;
+    height: 300px;
+    margin-top: 70px;
+}
+body article div.otzuv form p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: -10px;
+}
+body article div.otzuv form p textarea {
+    resize: none;
+    width: 400px;
+    height: 180px;
+    outline: none;
+}
+body article div.otzuv form p button {
+    width: 150px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5%;
+}
+body article div.otzuvu {
+    width: 610px;
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 130px;
+    border-radius: 1%;
+    background-color: rgb(233, 232, 232);
+    border: 8px solid orange;
+    margin-bottom: 15px;
+    border-radius: 5%;
+}
+body article div.otzuvu img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5%;
+    margin-top: 3px;
+    margin-left: 10px;
+    border: 1px solid grey;
+}
+body article div.otzuvu div {
+    margin-left: 87px;
+    margin-top: -75px;
+    width: 500px;
+    height: 100%;
+}
+body article div.otzuvu div p {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.error {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+.success {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: green;
+}
+body article div.otzuvu div span {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+@media screen and (max-width: 1400px) and (min-width: 401px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        width: 400px;
+    }
+     body article {
+        left: 0px;
+    }
+    body article div.otzuv form p textarea {
+        border: 1px solid grey;
+    }
+
+}

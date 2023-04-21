@@ -1,0 +1,109 @@
+body {
+    height: 100%;
+    width: 1600px;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+body article div.tabel ul li {
+    list-style: none;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    float: left;
+}
+body article div.tabel ul li div.div {
+    background-color: rgb(224, 220, 220);
+    width: 240px;
+    height: 150px;
+    border-radius: 5%;
+    margin-left: -20px;
+    border: 1px solid grey;
+    text-align: center;
+}
+body article div.tabel {
+    margin-top: 20px;
+    height: 100%;
+    width: 850px;
+    margin-left: 20px;
+}
+body article div.tabel ul li div.div img {
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    border-radius: 5%;
+    margin-top: -10px;
+    margin-left: -5px;
+}
+body article div.tabel ul li p.admin span {
+    font-size: 16px;
+    margin-left: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body article div.tabel ul li p.admin {
+    margin-left: 15px;
+    margin-top: 0px;
+}
+body article div.people {
+    width: 800px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+body article div.people span {
+    font-size: 27px;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -42px;
+}
+body article div.people input {
+    width: 250px;
+    height: 30px;
+    margin-top: 8px;
+    margin-left: 10px;
+    outline: none;
+}
+body article div.poisk {
+    background-color: orange;
+    width: 310px;
+    height: 50px;
+    border-radius: 3%;
+}
+body article div.people button {
+    width: 35px;
+    height: 36px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: -4.5px;
+    background-color: white;
+    border: 1px solid grey;
+    background-color: orange;
+}
+body article div.people button a img {
+    width: 20px;
+    margin-left: -3px;
+}
+body article div.tabel ul li div.hide {
+    display: none;
+}
+@media screen and (max-width: 1400px) and (min-width: 401px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        width: 400px;
+    }
+    body article {
+        left: 0px;
+    }
+}

@@ -1,0 +1,171 @@
+body {
+    height: 850px;
+    width: 1600px;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 1050px;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+body article div.admin {
+    width: 200px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+body article div.admin img {
+    border: 1px solid rgb(247, 177, 48);
+    border-radius: 5%;
+    width: 150px;
+    height: 150px;
+}
+body article div.content {
+    width: 570px;
+    height: 210px;
+    position: absolute;
+    margin-left: 195px;
+    margin-top: 25px;
+    word-break: break-all;
+}
+p.error {
+    font-size: 15px;
+    color: red;
+}
+p.success {
+    font-size: 15px;
+    color: green;
+}
+body article div.content  p {
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -1%;
+}
+body article div.content2 {
+    width: 200px;
+    position: absolute;
+    margin-left: 770px;
+    margin-top: 30px;
+}
+body article div.content2 p {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -10px;
+}
+body article div.vopros {
+    position: absolute;
+    margin-top: 360px;
+    width: 728px;
+    height: 670px;
+    margin-left: 6.5%;
+}
+
+body article div.vopros span {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid rgb(247, 177, 48);
+    border-radius: 5%;
+    width: 350px;
+    margin-top: 1%;
+    text-align: center;
+    position: absolute;
+    left: 180px;
+}
+label {
+    display: none;
+    width: 350px;
+    height: 170px;
+    margin-left: 135px;
+    margin-top: 0px;
+    background: silver;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+body article div.vopros form {
+    position: absolute;
+    left: 280px;
+    width: 800px;
+    height: 300px;
+    margin-top: 8%;
+    margin-left: -12%;
+}
+body article div.vopros form p {
+    margin-top: -1%;
+    margin-left: -18%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body article div.vopros form p input {
+    width: 694px;
+    height: 30px;
+    outline: none;
+}
+body article div.vopros form p textarea {
+    resize: none;
+    width: 694px;
+    height: 224px;
+    outline: none;
+}
+body article div.vopros form p button {
+    width: 150px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body article div.vopros form p button.button2 {
+    width: 150px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5%;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+@media screen and (max-width: 1400px) and (min-width: 1001px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 1000px) and (min-width: 401px){
+    body {
+        width: 1300px;
+    }
+    body div.admin p a {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        width: 400px;
+    }
+    body article {
+        position: absolute;
+        left: 0px;
+    }
+    body article div.vopros form p input {
+        border: 1px solid grey;
+    }
+    body article div.vopros form p textarea {
+        border: 1px solid grey;
+    }
+    body div.admin p a {
+        font-size: 14px;
+    }
+    body article div.vopros form p.error {
+        font-size: 15px;
+    }
+    body article div.vopros form p button.button2 {
+        width: 170px;
+    }
+}
+

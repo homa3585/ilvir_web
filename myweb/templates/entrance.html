@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gashev Ilya">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='entrance.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+    <title>Вход</title>
+</head>
+<body>
+    <header>
+        <span><span class="text"><b>вот ответ</b> - лучший сайт вопрос-ответ,</br></span> где пользователи могут обмениваться своими знаниями!</span>
+    </header>
+    <article>
+        <ul>
+            <li><a href="/">Вход</a></li>
+            <li><a href="/registration/new_account/login/password/{{ registration }}">Регистрация</a></li>
+        </ul>
+        <p class="text">Вход</p>
+        <form method="post">
+            {% for data, msg in get_flashed_messages(True) %}
+            <p ><label class="{{ data }}">{{ msg }}</label></p>
+            {% endfor %}
+            <p style="margin-top: -15px;"><a href="/users/account/mf4sk7l7c86d344da51ec25059798a5df4ccd1c/646399f452ee73777d9009139400dc29" style="text-decoration: none; color: blue;">Войти без регистрации</a></p>
+            <p class="label"><label>Электронная почта(Gmail): </label></p>
+            <p><input type="email" required name="email"></p>
+            <p class="label"><label>Пароль: </label></p>
+            <p><input type="password" required name="password"></p>
+            <button>Войти</button>
+        </form>
+    </article>
+</body>
+</html>

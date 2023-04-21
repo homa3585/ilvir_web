@@ -1,0 +1,287 @@
+body {
+    background-color: rgb(223, 221, 221);
+    height: 500px;
+ }
+ body header {
+     padding-top: 5%;
+     position: relative;
+ }
+ body header span.text {
+     position: relative;
+     left: 5%;
+ }
+ body header span {
+     position: relative;
+     left: 28%;
+     font-size: 25px;
+     font-family: Arial, Helvetica, sans-serif;
+     color: black;
+ }
+ body article {
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 5%;
+     background-color: white;
+     width: 35%;
+     height: 23%;
+     padding-top: 20%;
+     border: 1px solid orange;
+     border-radius: 3%;
+ }
+ body article ul li {
+     display: inline;
+     margin-left:5%;
+     font-size: 20px;
+ }
+ body article p label.success {
+     color: green;
+     font-size: 15px;
+     margin-left: 0px;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+ body article p label.error {
+    color: red;
+    font-size: 15px;
+    margin-left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ body article ul {
+     margin-top: -55%;
+     margin-left: auto;
+     margin-right: auto;
+     border-bottom: 1px solid orange;
+ }
+ body article ul li a:hover {
+     color: blue;
+     border: 1px solid blue;
+ }
+ body article ul li a {
+     text-decoration: none;
+     color: black;
+ }
+ body article form {
+     margin-top: -3%;
+     margin-left: 20%;
+ }
+ body article form p input {
+     width: 71%;
+     height: 20px;
+     outline: none;
+     margin-top: -15px;
+ }
+ body article form p.label label {
+     font-size: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+ body article form p.label {
+     margin-bottom: 10px;
+ }
+ body article p.text {
+     font-size: 20px;
+     font-family: 'Times New Roman', Times, serif;
+     margin-left: 35%;
+     margin-top: -10px;
+ }
+ body article form button {
+     width: 73%;
+     height: 25px;
+     color: white;
+     border: 1px solid orange;
+     background-color: orange;
+     border-radius: 10%;
+ }
+ body article form p.label {
+     margin-top: -10px;
+ }
+ body article form button:hover {
+   box-shadow: 0 5px rgb(229, 226, 226);
+   transform: translateY(4px);
+ }
+ body footer{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+body footer span {
+    margin-left: 25px;
+}
+ @media screen and (max-width: 1104px) and (min-width: 900px) {
+     body article {
+         width: 40%;
+         height: 42%;
+         padding-top: 22%;
+     }
+     body header span.text {
+         position: relative;
+         left: 10%;
+     }
+     body header span {
+         position: relative;
+         left: 18%;
+         font-size: 25px;
+         font-family: Arial, Helvetica, sans-serif;
+         color: black;
+     }
+ }
+ @media screen and (max-width: 1240px) and (min-width: 1105px) {
+     body header span.text {
+         position: relative;
+         left: 10%;
+     }
+     body header span {
+         position: relative;
+         left: 20%;
+         font-size: 25px;
+         font-family: Arial, Helvetica, sans-serif;
+         color: black;
+     }
+     body article {
+         height: 40%;
+     }
+ }
+ @media screen and (max-width: 1400px) and (min-width: 1241px) {
+    body article {
+         height: 30%;
+     }
+ }
+ @media screen and (max-width: 899px) and (min-width: 700px) {
+     body article {
+         width: 50%;
+         height: 54%;
+         padding-top: 22%;
+     }
+     body header span.text {
+         position: relative;
+         left: 14%;
+     }
+     body header span {
+         position: relative;
+         left: 15%;
+         font-size: 20px;
+         font-family: Arial, Helvetica, sans-serif;
+         color: black;
+     }
+     body article ul {
+         margin-top: -40%;
+     }
+ }
+ @media screen and (max-width: 699px) and (min-width: 529px) {
+     body header span.text {
+         position: relative;
+         left: 14%;
+     }
+     body header span {
+         position: relative;
+         left: 11.5%;
+         font-size: 17px;
+         font-family: Arial, Helvetica, sans-serif;
+         color: black;
+     }
+     body article {
+         width: 65%;
+         height: 61%;
+         padding-top: 22%;
+     }
+     body article ul {
+         margin-top: -30%;
+     }
+    body footer {
+        width: 430px;
+    }
+ }
+ @media  screen and (max-width: 528px) and (min-width: 397px) {
+     body article {
+         width: 90%;
+         height: 67%;
+         padding-top: 23%;
+     }
+     body article ul {
+         margin-top: -25%;
+     }
+     body header span.text {
+         position: relative;
+         left: 0%;
+     }
+     body header span {
+         position: relative;
+         left: 7%;
+         font-size: 16px;
+         font-family: Arial, Helvetica, sans-serif;
+         color: black;
+     }
+     body footer span {
+        font-size: 14px;
+    }
+ }
+ @media  screen and (max-width: 396px) and (min-width: 334px) {
+     body article {
+         width: 100%;
+         height: 67%;
+         padding-top: 25%;
+     }
+     body article ul {
+         margin-top: -23%;
+     }
+     body header span.text {
+         position: relative;
+         left: 0%;
+     }
+     body header span {
+         font-size: 15px;
+         position: relative;
+         left: 6%;
+     }
+    body footer {
+        width: 370px;
+    }
+    body footer span {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-right: -10px;
+    }
+ }
+ @media  screen and (max-width: 333px) {
+     body article {
+         width: 350px;
+         margin-left: 0px;
+         height: 395px;
+         margin-top: 40px;
+     }
+     body header span {
+         position: relative;
+         left: 0px;
+         font-size: 19px;
+     }
+     body header {
+         margin-left: 2px;
+         width: 350px;
+         height: 100px;
+     }
+     body article ul {
+         margin-top:  -30px;
+     }
+     body article p.text {
+         font-size: 21px;
+     }
+     body article form p {
+         margin-left: 0px;
+     }
+     body article form {
+         margin-top: 15px;
+         margin-left: 10px;
+         height: 230px;
+         width: 300px;
+     }
+     body article form p input {
+         width: 290px;
+         height: 22px;
+     }
+     body article form button {
+         width: 300px;
+         height: 25px;
+     }
+    body footer span {
+        margin-right: -10px;
+    }
+}

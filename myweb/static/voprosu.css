@@ -1,0 +1,202 @@
+body {
+    width: 1600px;
+    height: 100%;
+    background-color: rgb(223, 221, 221);
+    padding: 0%;
+    margin: 0%;
+}
+body article {
+    width: 900px;
+    height: 100%;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+}
+body article div.vopros {
+    width: 800px;
+    height: 100%;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+body article p img.ikonka {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    margin-top: 10px;
+    border: 1px solid grey;
+}
+body article div.vopros p b span {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body article div.vopros p.text {
+    width: 650px;
+    margin-left: 130px;
+    margin-top: -90px;
+}
+body article div.vopros p.text2 {
+    margin-left: 115px;
+    margin-top: 10px;
+    width: 650px;
+}
+body article div.vopros p.text2 span {
+    word-wrap: break-word;
+    color: black;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+body article div.vopros p.img {
+    width: 550px;
+    height: 250px;
+    margin: auto;
+}
+body article div.vopros p.img img {
+    width: 45%;
+    margin-left: 150px;
+}
+p.vopros-user {
+    background-color: rgb(230, 227, 227);
+    width: 800px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid grey;
+}
+p.vopros-user span {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 280px;
+    position: absolute;
+    top: 115px;
+    width: 400px;
+}
+body article div.vopros p.user {
+    background-color: rgb(230, 227, 227);
+    width: 800px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid grey;
+}
+body article div.vopros p.user span {
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 300px;
+    margin-top: 10px;
+    width: 210px;
+}
+body article div.content {
+    border-top: 10px solid rgb(223, 221, 221);
+}
+body article div.content form {
+    width: 730px;
+    margin-left: 160px;
+    margin-top: -75px;
+}
+body article div.content img.ikonka {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    border: 1px solid grey;
+    margin-top: 15px;
+    margin-left: 65px;
+}
+body article div.content p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -10px;
+}
+body article div.content p span {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    word-break: break-all;
+}
+body article div.content p button {
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    border: 1px solid rgb(4, 94, 4);
+    border-radius: 100px;
+    margin-left: 500px;
+}
+body article div.content p button a.like {
+    text-decoration: none;
+    color: white;
+}
+body article div.content2 {
+    border-top: 10px solid rgb(223, 221, 221);
+}
+body article div.content2 form p{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -5px;
+    margin-left: 100px;
+}
+body article div.content2 form {
+    margin-top: 10px;
+}
+body article div.content2 form p textarea {
+    width: 600px;
+    height: 300px;
+    outline: none;
+    border: 1px solid grey;
+    resize: none;
+}
+body article div.content2 form p button {
+    width: 200px;
+    height: 30px;
+    background-color: orange;
+    color: white;
+    font-size: 18px;
+    border: 1px solid orange;
+    border-radius: 100px;
+
+}
+p.vopros-user2 {
+    background-color: rgb(230, 227, 227);
+    width: 800px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid grey;
+    margin-left: 45px;
+}
+p.vopros-user2 span {
+    font-size: 20px;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    margin-left: 300px;
+    width: 500px;
+}
+body article div.content3 {
+    border-top: 10px solid rgb(223, 221, 221);
+}
+body article div.content3 p.text {
+    border-bottom: 1px solid grey;
+    margin-top: -10px;
+    font-size: 15px;
+}
+body article div.content3 p {
+    width: 850px;
+    margin-left: 30px;
+}
+body article div.content3 p a {
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+    text-decoration: none;
+}
+@media screen and (max-width: 1400px) and (min-width: 401px){
+    body {
+        width: 1300px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body {
+        width: 400px;
+    }
+    body article {
+        left: 0px;
+    }
+    body article div.content2 form p textarea{border: 1px solid grey;}
+    body article div.content2 form p input {border: 1px solid grey;}
+}

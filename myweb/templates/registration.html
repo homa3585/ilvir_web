@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gashev Ilya">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='registration.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='/images/логотип.png') }}" type="image/x-icon">
+    <title>Регистрация</title>
+</head>
+<body>
+    <header>
+        <span><span class="text"><b>вот ответ</b> - лучший сайт вопрос-ответ,</br></span> где пользователи могут обмениваться своими знаниями!</span>
+    </header>
+    <article>
+        <ul>
+            <li><a href="/">Вход</a></li>
+            <li><a href="/registration/new_account/login/password/{{ registration }}">Регистрация</a></li>
+        </ul>
+        <p class="text">Регистрация</p>
+        <form method="post">
+            {% for data, msg in get_flashed_messages(True) %}
+            <p ><label class="{{ data }}">{{ msg }}</label></p>
+            {% endfor %}
+            <p class="label"><label>Фамилия: </label></p>
+            <p><input type="text"  required name="surname"></p>
+            <p class="label"><label>Имя: </label></p>
+            <p><input type="text" required name="name"></p>
+            <p class="label"><label>Электронная почта(Gmail): </label></p>
+            <p><input type="email" required name="email" required name="email"></p>
+            <p class="label"><label>Пароль: </label></p>
+            <p><input type="password" required name="password" required name="password"></p>
+            <button>Зарегистрироваться</button>
+        </form>
+    </article>
+</body>
+</html>
